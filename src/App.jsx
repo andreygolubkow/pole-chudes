@@ -37,11 +37,11 @@ function App() {
       {/* Leonid Yakubovich behind wheel */}
       <div className="yakubovich-behind">
         <div className="yakubovich">
-          <div className="yakubovich-body">
-            <img src={yakubovichSvg} alt="Leonid Yakubovich" />
-          </div>
           <div className="speech-bubble">
             <p>{yakubovichSpeech}</p>
+          </div>
+          <div className="yakubovich-body">
+            <img src={yakubovichSvg} alt="Leonid Yakubovich" />
           </div>
         </div>
       </div>
