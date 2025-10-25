@@ -6,8 +6,9 @@ function App() {
   const [isSpinning, setIsSpinning] = useState(false)
   const [selectedName, setSelectedName] = useState('')
   const [showResult, setShowResult] = useState(false)
+  const [yakubovichSpeech, setYakubovichSpeech] = useState('Крутите барабан!')
 
-  const names = ["Anton", "Mikhail", "Ivan", "Vlad", "Yauheni"]
+  const wheelSegments = ["Anton", "Mikhail", "Ivan", "Vlad", "Yauheni"]
 
   const spinWheel = () => {
     if (isSpinning) return
@@ -15,26 +16,32 @@ function App() {
     setIsSpinning(true)
     setShowResult(false)
     setSelectedName('')
+    setYakubovichSpeech('Крутится барабан...')
 
     // Simulate spinning for 3 seconds
     setTimeout(() => {
-      const randomName = names[Math.floor(Math.random() * names.length)]
-      setSelectedName(randomName)
+      const randomSegment = wheelSegments[Math.floor(Math.random() * wheelSegments.length)]
+      setSelectedName(randomSegment)
       setIsSpinning(false)
       setShowResult(true)
+
+      // Reset speech after 5 seconds
+      setTimeout(() => {
+        setYakubovichSpeech('Крутите барабан!')
+      }, 5000)
     }, 3000)
   }
 
   return (
     <div className="game-container">
-      {/* Leonid Yakubovich in corner */}
-      <div className="yakubovich-corner">
+      {/* Leonid Yakubovich behind wheel */}
+      <div className="yakubovich-behind">
         <div className="yakubovich">
           <div className="yakubovich-body">
             <img src={yakubovichSvg} alt="Leonid Yakubovich" />
           </div>
           <div className="speech-bubble">
-            <p>Крутите барабан!</p>
+            <p>{yakubovichSpeech}</p>
           </div>
         </div>
       </div>
@@ -54,12 +61,13 @@ function App() {
 
         {/* The wheel */}
         <div className="wheel-container">
+          {/* External triangle pointer */}
+          <div className="external-pointer">◄</div>
           <div
             className={`wheel ${isSpinning ? 'spinning' : ''}`}
             onClick={spinWheel}
           >
             <div className="wheel-center">
-              <div className="wheel-pointer">▼</div>
               {!isSpinning && !showResult && <p>Нажмите для<br/>вращения</p>}
               {isSpinning && <p>Крутится...</p>}
             </div>
