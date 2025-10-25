@@ -22,8 +22,8 @@
 /* Leonid Yakubovich Behind Wheel */
 .yakubovich-behind {
   position: absolute;
-  top: 25%;
-  left: 50%;
+  top: 20%;
+  left: 65%;
   transform: translate(-50%, -50%) translateZ(-100px);
   z-index: 1;
 }
@@ -147,8 +147,8 @@
 }
 
 .wheel {
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   background: conic-gradient(
     #000000 0deg 60deg,
@@ -158,7 +158,7 @@
     #000000 240deg 300deg,
     #ffffff 300deg 360deg
   );
-  border: 8px solid #333;
+  border: 12px solid #333;
   position: relative;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -166,24 +166,24 @@
   justify-content: center;
   align-items: center;
   /* Isometric perspective */
-  transform: perspective(800px) rotateX(30deg);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transform: perspective(1200px) rotateX(30deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 }
 
 .wheel:hover:not(.spinning) {
-  transform: perspective(800px) rotateX(30deg) scale(1.05);
+  transform: perspective(1200px) rotateX(30deg) scale(1.05);
 }
 
 .wheel-center {
   background: white;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 4px solid #333;
+  border: 6px solid #333;
   position: relative;
   z-index: 10;
 }
@@ -222,10 +222,10 @@
 
 @keyframes spin {
   from {
-    transform: perspective(800px) rotateX(30deg) rotateZ(0deg);
+    transform: perspective(1200px) rotateX(30deg) rotateZ(0deg);
   }
   to {
-    transform: perspective(800px) rotateX(30deg) rotateZ(1800deg); /* 5 full rotations */
+    transform: perspective(1200px) rotateX(30deg) rotateZ(1800deg); /* 5 full rotations */
   }
 }
 

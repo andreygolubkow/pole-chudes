@@ -68,12 +68,7 @@ function App() {
               {isSpinning && <p>Крутится...</p>}
             </div>
             {/* Wheel segments */}
-            <div className="wheel-segment segment-1"></div>
-            <div className="wheel-segment segment-2"></div>
-            <div className="wheel-segment segment-3"></div>
-            <div className="wheel-segment segment-4"></div>
-            <div className="wheel-segment segment-5"></div>
-            <div className="wheel-segment segment-6"></div>
+
           </div>
         </div>
       </div>
