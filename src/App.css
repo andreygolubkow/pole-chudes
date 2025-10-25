@@ -235,6 +235,9 @@
   width: 50%;
   height: 50%;
   transform-origin: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .segment-1 { transform: rotate(0deg); }
@@ -243,6 +246,17 @@
 .segment-4 { transform: rotate(180deg); }
 .segment-5 { transform: rotate(240deg); }
 .segment-6 { transform: rotate(300deg); }
+
+.segment-name {
+  position: absolute;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  transform: rotate(-30deg);
+  top: 30%;
+  left: 60%;
+}
 
 /* Result Display */
 .result-display {

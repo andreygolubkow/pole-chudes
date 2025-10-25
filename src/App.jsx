@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import yakubovichSvg from './assets/yakubovich.svg'
+import alexanderSvg from './assets/alexander.svg'
 
 function App() {
   const [isSpinning, setIsSpinning] = useState(false)
@@ -41,7 +42,10 @@ function App() {
             <p>{yakubovichSpeech}</p>
           </div>
           <div className="yakubovich-body">
-            <img src={yakubovichSvg} alt="Leonid Yakubovich" />
+            <img
+              src={selectedName === 'Yauheni' ? alexanderSvg : yakubovichSvg}
+              alt={selectedName === 'Yauheni' ? 'Alexander' : 'Leonid Yakubovich'}
+            />
           </div>
         </div>
       </div>
@@ -68,7 +72,10 @@ function App() {
               {isSpinning && <p>Крутится...</p>}
             </div>
             {/* Wheel segments */}
-
+            {wheelSegments.map((name, index) => (
+              <div key={index} className={`wheel-segment segment-${index + 1}`}>
+              </div>
+            ))}
           </div>
         </div>
       </div>
