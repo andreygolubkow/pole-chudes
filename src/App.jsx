@@ -1,0 +1,87 @@
+import { useState } from 'react'
+import './App.css'
+import yakubovichSvg from './assets/yakubovich.svg'
+
+function App() {
+  const [isSpinning, setIsSpinning] = useState(false)
+  const [selectedName, setSelectedName] = useState('')
+  const [showResult, setShowResult] = useState(false)
+
+  const names = ["Anton", "Mikhail", "Ivan", "Vlad", "Yauheni"]
+
+  const spinWheel = () => {
+    if (isSpinning) return
+
+    setIsSpinning(true)
+    setShowResult(false)
+    setSelectedName('')
+
+    // Simulate spinning for 3 seconds
+    setTimeout(() => {
+      const randomName = names[Math.floor(Math.random() * names.length)]
+      setSelectedName(randomName)
+      setIsSpinning(false)
+      setShowResult(true)
+    }, 3000)
+  }
+
+  return (
+    <div className="game-container">
+      {/* Leonid Yakubovich in corner */}
+      <div className="yakubovich-corner">
+        <div className="yakubovich">
+          <div className="yakubovich-body">
+            <img src={yakubovichSvg} alt="Leonid Yakubovich" />
+          </div>
+          <div className="speech-bubble">
+            <p>Крутите барабан!</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Game title */}
+      <h1 className="game-title">ПОЛЕ ЧУДЕС</h1>
+
+      {/* Main game area */}
+      <div className="game-area">
+        {/* People around the wheel */}
+        <div className="people-container">
+          <div className="person person-1">🧑‍🤝‍🧑</div>
+          <div className="person person-2">👥</div>
+          <div className="person person-3">🧑‍🤝‍🧑</div>
+          <div className="person person-4">👥</div>
+        </div>
+
+        {/* The wheel */}
+        <div className="wheel-container">
+          <div
+            className={`wheel ${isSpinning ? 'spinning' : ''}`}
+            onClick={spinWheel}
+          >
+            <div className="wheel-center">
+              <div className="wheel-pointer">▼</div>
+              {!isSpinning && !showResult && <p>Нажмите для<br/>вращения</p>}
+              {isSpinning && <p>Крутится...</p>}
+            </div>
+            {/* Wheel segments */}
+            <div className="wheel-segment segment-1"></div>
+            <div className="wheel-segment segment-2"></div>
+            <div className="wheel-segment segment-3"></div>
+            <div className="wheel-segment segment-4"></div>
+            <div className="wheel-segment segment-5"></div>
+            <div className="wheel-segment segment-6"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Result display */}
+      {showResult && (
+        <div className="result-display">
+          <h2>Выпало: {selectedName}</h2>
+        </div>
+      )}
+    </div>
+  )
+}
+
+export default App

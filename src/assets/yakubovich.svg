@@ -1,0 +1,46 @@
+<svg width="120" height="160" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Face -->
+  <ellipse cx="60" cy="50" rx="35" ry="40" fill="#f4c2a1" stroke="#d4a574" stroke-width="2"/>
+
+  <!-- Hair (gray/white) -->
+  <path d="M25 25 Q60 15 95 25 Q95 35 85 40 Q75 35 60 35 Q45 35 35 40 Q25 35 25 25" fill="#d3d3d3"/>
+
+  <!-- Eyes -->
+  <circle cx="48" cy="45" r="3" fill="#333"/>
+  <circle cx="72" cy="45" r="3" fill="#333"/>
+
+  <!-- Glasses -->
+  <circle cx="48" cy="45" r="12" fill="none" stroke="#333" stroke-width="2"/>
+  <circle cx="72" cy="45" r="12" fill="none" stroke="#333" stroke-width="2"/>
+  <line x1="60" y1="45" x2="60" y2="45" stroke="#333" stroke-width="2"/>
+
+  <!-- Nose -->
+  <ellipse cx="60" cy="55" rx="3" ry="5" fill="#e6a982"/>
+
+  <!-- Mustache -->
+  <path d="M50 62 Q60 65 70 62" fill="#666" stroke="#333" stroke-width="1"/>
+
+  <!-- Mouth -->
+  <path d="M52 70 Q60 75 68 70" fill="none" stroke="#333" stroke-width="2"/>
+
+  <!-- Body/Suit -->
+  <rect x="30" y="90" width="60" height="70" fill="#1a1a2e" rx="5"/>
+
+  <!-- Shirt -->
+  <rect x="45" y="95" width="30" height="50" fill="#fff"/>
+
+  <!-- Tie -->
+  <polygon points="55,95 65,95 67,125 53,125" fill="#8B0000"/>
+
+  <!-- Suit lapels -->
+  <path d="M30 95 L50 95 L45 110 L30 120" fill="#0f0f1a"/>
+  <path d="M90 95 L70 95 L75 110 L90 120" fill="#0f0f1a"/>
+
+  <!-- Arms -->
+  <rect x="10" y="100" width="20" height="40" fill="#1a1a2e" rx="10"/>
+  <rect x="90" y="100" width="20" height="40" fill="#1a1a2e" rx="10"/>
+
+  <!-- Hands -->
+  <circle cx="20" cy="145" r="8" fill="#f4c2a1"/>
+  <circle cx="100" cy="145" r="8" fill="#f4c2a1"/>
+</svg>
