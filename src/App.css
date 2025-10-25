@@ -170,7 +170,7 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
-.wheel:hover {
+.wheel:hover:not(.spinning) {
   transform: perspective(800px) rotateX(30deg) scale(1.05);
 }
 
@@ -222,10 +222,10 @@
 
 @keyframes spin {
   from {
-    transform: rotate(0deg);
+    transform: perspective(800px) rotateX(30deg) rotateZ(0deg);
   }
   to {
-    transform: rotate(1800deg); /* 5 full rotations */
+    transform: perspective(800px) rotateX(30deg) rotateZ(1800deg); /* 5 full rotations */
   }
 }
 

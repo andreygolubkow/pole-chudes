@@ -53,11 +53,7 @@ function App() {
       <div className="game-area">
         {/* People around the wheel */}
         <div className="people-container">
-          <div className="person person-1">🧑‍🤝‍🧑</div>
-          <div className="person person-2">👥</div>
-          <div className="person person-3">🧑‍🤝‍🧑</div>
-          <div className="person person-4">👥</div>
-        </div>
+         </div>
 
         {/* The wheel */}
         <div className="wheel-container">
